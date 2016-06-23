@@ -2,5 +2,5 @@
 <head>
 <title>Hello World</title>
 </head>
-<body>Hello World,Hello Lxxc!</body>
+<body>Hello Lxxc!</body>
 </html>
