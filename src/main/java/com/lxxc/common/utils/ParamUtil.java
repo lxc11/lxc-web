@@ -1,4 +1,4 @@
-package com.lxxc.common.util;
+package com.lxxc.common.utils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class ParamUtils {
+public class ParamUtil {
 	public static String getParameter(HttpServletRequest request, String name) {
 		return getParameter(request, name, false);
 	}
@@ -41,7 +41,7 @@ public class ParamUtils {
 	public static String getFilteredParameter(HttpServletRequest request, String name, int maxLength, String defaultString) {
 		String[] temp = request.getParameterValues(name);
 		if (temp != null && temp.length > 0 && !temp[0].equals("")) {
-			String ret = WebUtils.escapeParamString(temp[0]);
+			String ret = WebUtil.escapeParamString(temp[0]);
 			if (maxLength > 0)
 				ret = StringUtils.substring(ret, 0, maxLength);
 			return ret;
@@ -63,7 +63,7 @@ public class ParamUtils {
 			try {
 				String temp = paramValues[i];
 				if ((temp != null) && (!temp.equals(""))) {
-					temp = WebUtils.escapeParamString(temp);
+					temp = WebUtil.escapeParamString(temp);
 					if (maxLength > 0)
 						temp = StringUtils.substring(temp, 0, maxLength);
 					values[i] = temp;
@@ -265,10 +265,10 @@ public class ParamUtils {
 					// Do nothing, no values found at all.
 				} else if (values.length > 1) {
 					String temp = StringUtils.join(values, ';');
-					params.put(unprefixed, WebUtils.escapeParamString(temp));
+					params.put(unprefixed, WebUtil.escapeParamString(temp));
 				} else {
 					if (!StringUtils.isEmpty(values[0]))
-						params.put(unprefixed, WebUtils.escapeParamString(values[0]));
+						params.put(unprefixed, WebUtil.escapeParamString(values[0]));
 					else
 						params.put(unprefixed, "");
 				}

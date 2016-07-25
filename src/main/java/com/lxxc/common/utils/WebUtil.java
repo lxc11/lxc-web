@@ -1,8 +1,8 @@
-package com.lxxc.common.util;
+package com.lxxc.common.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class WebUtils {
+public class WebUtil {
 	public static String escapeParamString(String value) {
 		
 		if (value == null)
